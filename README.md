@@ -1,2 +1,6 @@
-# Backroom
-Experimental C++/CUDA research project for running oversized sparse LLMs on 16 GiB consumer GPUs through tiered memory, quantization and inference optimization
+#Backroom — экспериментальный C++/CUDA-проект по исследованию инференса очень больших sparse/MoE-моделей на обычных видеокартах с ограниченным объёмом VRAM.
+Основные направления: native Windows inference, иерархия VRAM/RAM/NVMe, кэширование и предзагрузка экспертов, low-bit quantization, оптимизация CUDA-ядер, длинный контекст и архитектурные особенности вроде Gated DeltaNet, QSA и MTP.
+
+Основной target — Qwen3.8-Flash-Next на RTX 5070 Ti 16 GiB. Qwen3.6-35B-A3B и Qwen3-Next-80B-A3B используются как промежуточные исследовательские модели.
+
+Цель проекта — не написать ещё один универсальный inference framework, а понять, насколько далеко можно вытянуть инференс огромных моделей на обычном desktop-железе и зафиксировать это в виде воспроизводимых экспериментов, профилей и технических результатов.
